@@ -122,3 +122,59 @@ This simulates recovering from user error.
 
 ---
 
+**Enable Soft Delete**
+The goal of this section is to recover deleted file shares.
+
+<img width="1131" height="902" alt="image" src="https://github.com/user-attachments/assets/f081a5b9-04bb-42d2-9447-3f7609567473" />
+
+Soft delete protects entire file shares from accidental deletion. Snapshots protect file contents.
+
+---
+
+**Test Soft Delete**
+
+Lets test it by deleting the file share
+
+az storage share delete --account-name dmpfilestorage --name dmp-shared-files --delete-snapshots include
+
+<img width="1132" height="177" alt="image" src="https://github.com/user-attachments/assets/4b1b3f0b-c2b1-43da-ad3c-fde5abe0b03f" />
+
+<img width="1132" height="627" alt="image" src="https://github.com/user-attachments/assets/2e2a0aee-8835-438e-a1a4-b0adcd9aa110" />
+
+Files have been deleted. Now lets retrieve them using Soft delete.
+
+<img width="1132" height="622" alt="image" src="https://github.com/user-attachments/assets/d671e1db-53bd-44ea-80f2-e69fb21fe43a" />
+
+<img width="1132" height="626" alt="image" src="https://github.com/user-attachments/assets/034c132a-1d9f-45fe-b648-090c96f577c3" />
+
+It has been recovered.
+
+---
+
+**Azure Files vs Blob Storage Comparison**
+
+
+| Azure Files             | Blob Storage         |
+| ----------------------- | -------------------- |
+| SMB protocol            | REST API             |
+| Network drive           | Object storage       |
+| Shared file server      | Application storage  |
+| Traditional file access | Cloud-native storage |
+
+---
+
+**Concepts Covered**
+
+Features Implemented
+Azure File Share creation
+Department file structure
+Network drive mapping
+Snapshot creation and restore
+Soft delete recovery
+Identity-based access review
+
+Key Learnings
+Azure Files can replace traditional file servers
+Snapshots provide point-in-time recovery
+Soft delete protects entire file shares
+Azure Files and Blob Storage serve different use cases
